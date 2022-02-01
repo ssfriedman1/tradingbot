@@ -26,7 +26,7 @@ import time
 import sys
 import os
 import httpx 
-from config import api_key, redirect_uri, token_path
+from config import * # api_key, redirect_uri, token_path
 #Creation of Bar class to update the data for a stock to be looked back upon by the bot, data fills in as stock is tracked
 class Bar:
     open = 0
@@ -60,9 +60,9 @@ class Bot:
     def __init__(self):
         try:
             #Global vars
-            API_KEY = GO4TJYDKMQSORHTWAI4TNG26RVQQRSG3 # My API key from app
+            API_KEY = 'GO4TJYDKMQSORHTWAI4TNG26RVQQRSG3' # My API key from app
             REDIRECT_URI = 'https://localhost' #URL from my app
-            TOKEN_PATH = token_path
+            TOKEN_PATH = '/tmp/token.json'
             # Create a new client from our info above, causes chrome to open to log in
             self.client = tda.auth.easy_client(API_KEY,
                 REDIRECT_URI,
